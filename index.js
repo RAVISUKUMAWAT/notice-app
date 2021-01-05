@@ -1,9 +1,15 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
 const pool = require("./db");
 const uuid = require('uuid');
 const moment = require('moment');
 
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200 
+}
+app.use(cors(corsOptions));
 app.use(express.json()); // req.body
 
 /** 
